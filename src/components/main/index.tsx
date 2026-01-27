@@ -1,4 +1,4 @@
-const Index = () => {
+const Main = () => {
     return(
         <>
         </>
@@ -6,4 +6,4 @@ const Index = () => {
 }
 
 
-export default Index;
+export default Main;

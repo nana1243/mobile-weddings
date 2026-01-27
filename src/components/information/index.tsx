@@ -1,8 +1,8 @@
-const Index = () => {
+const Information = () => {
     return(
         <>
         </>
     )
 }
 
-export default Index;
+export default Information;
