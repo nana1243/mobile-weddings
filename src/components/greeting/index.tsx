@@ -1,5 +1,8 @@
 import styles from './index.module.css';
-import weddingBackground from '../../assets/image/wedding_background.jpg';
+
+import weddingBackground from '@/assets/image/wedding_background.jpg';
+import weddingAudio from '@/assets/audio/Blueming.mp3';
+
 
 const Greeting = () => {
     return (
