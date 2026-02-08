@@ -58,3 +58,10 @@
     margin: 0;
     line-height: 1.5;
 }
+
+.audioPlayer {
+    position: absolute;
+    top: 10vh;
+    right: 3vh;
+    z-index: 10;
+}

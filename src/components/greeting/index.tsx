@@ -1,15 +1,17 @@
 import styles from './index.module.css';
 
 import weddingBackground from '@/assets/image/wedding_background.jpg';
-import weddingAudio from '@/assets/audio/Blueming.mp3';
+import AudioPlayer from "../audioplayer";
 
 
 const Greeting = () => {
     return (
         <div className={styles.container}>
             <div className={styles.imageAreaGuide}>
+                <div className={styles.audioPlayer}>
+                    <AudioPlayer/>
+                </div>
                 <img src={weddingBackground} alt="wedding background" className={styles.backgroundImage}/>
-
                 <div className={styles.nameOverlay}>
                     <span>이준서</span>
                     <span>김은재</span>
