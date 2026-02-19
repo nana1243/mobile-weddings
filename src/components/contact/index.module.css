@@ -1,0 +1,11 @@
+.container {
+    width: 100%;
+    background-color: #f0f0f0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
