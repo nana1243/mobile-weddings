@@ -27,7 +27,7 @@ const ContactBoard = (props: ContactBoardProps) => {
             {contactFamily.map((contact, index) => (
                     <ContactItem
                         key={index}
-                        title={contact.relationShip === 'groom' ? '신랑측' : '신부측'}
+                        title={contact.relationShip === 'groom' ? `신랑의 ${contact.title}` : `신부의 ${contact.title}`}
                         name={contact.name}
                         phoneNumber={contact.phoneNumber}
                     />
