@@ -10,7 +10,7 @@ const ATTENDANCE_TYPOGRAPHY = [
 
 const Attendance = () => {
 
-    const handleOnclick = (e) => {
+    const handleOnclick = (e: React.MouseEvent<HTMLButtonElement>) => {
         console.log('e', e)
     }
 

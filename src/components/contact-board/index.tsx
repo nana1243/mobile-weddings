@@ -18,7 +18,7 @@ const ContactBoard = (props: ContactBoardProps) => {
     return (
         <div className={styles.container}>
             <ContactItem
-                name={contactInfo?.name}
+                title={contactInfo.title}
                 phoneNumber={contactInfo?.phoneNumber}
             />
             <p>
@@ -27,8 +27,8 @@ const ContactBoard = (props: ContactBoardProps) => {
             {contactFamily.map((contact, index) => (
                     <ContactItem
                         key={index}
+                        title={contact.relationShip === 'groom' ? '신랑측' : '신부측'}
                         name={contact.name}
-                        relationShip={contact.relationShip}
                         phoneNumber={contact.phoneNumber}
                     />
                 )
