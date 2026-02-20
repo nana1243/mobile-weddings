@@ -5,6 +5,7 @@ import path from 'path';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base : 'mobile-weddings',
   resolve: {
     alias: [
       { find: '@', replacement: path.resolve(__dirname, 'src') }
