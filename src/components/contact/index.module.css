@@ -1,9 +1,11 @@
 .container {
     width: 100%;
-    background-color: #f0f0f0;
+    /*background-color: #f0f0f0;*/
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 10px;
+    max-width: 360px;
+    margin: 0 auto; /* 화면 중앙 정렬 */
     justify-items: center;
     align-items: center;
     text-align: center;

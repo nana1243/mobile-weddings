@@ -21,7 +21,7 @@ const ContactItem = (props: ContactItemProps) => {
                 <IconButton
                     component="a"
                     href={`tel:${phoneNumber}`}
-                    color="primary"
+                    color="default"
                 >
                     <CallIcon fontSize="large"/>
                 </IconButton>
@@ -30,7 +30,7 @@ const ContactItem = (props: ContactItemProps) => {
                 <IconButton
                     component="a"
                     href={`sms:${phoneNumber}`}
-                    color="primary"
+                    color="default"
                     aria-label="문자 보내기"
                     sx={{ml: 1}}
                 >
