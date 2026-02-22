@@ -11,9 +11,16 @@ import image9 from '../../assets/image/image9.png';
 import styles from './index.module.css'
 
 const Gallery = () => {
+    const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9];
     return (
-        <div className={styles.container}>
-
+        <div style={{backgroundColor: '#f0f0f0'}}>
+            <div className={styles.container}>
+                {images.map((img, index) => (
+                    <div key={index} className={styles.imageWrapper}>
+                        <img src={img} alt={`gallery-${index}`}/>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
