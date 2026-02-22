@@ -8,18 +8,43 @@ import image7 from '../../assets/image/image7.png';
 import image8 from '../../assets/image/image8.png';
 import image9 from '../../assets/image/image9.png';
 
-import styles from './index.module.css'
+import styles from './index.module.css';
+import Lightbox from 'yet-another-react-lightbox';
+import "yet-another-react-lightbox/styles.css";
+import {useState} from "react";
 
 const Gallery = () => {
     const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9];
+
+    const [open, setOpen] = useState(false);
+    const [index, setIndex] = useState(0);
+
     return (
         <div style={{backgroundColor: '#f0f0f0'}}>
             <div className={styles.container}>
                 {images.map((img, index) => (
-                    <div key={index} className={styles.imageWrapper}>
-                        <img src={img} alt={`gallery-${index}`}/>
+                    <div key={index} className={styles.imageWrapper}
+                         onClick={(e) => {
+                             setIndex(index);
+                             setOpen(true);
+
+                         }}
+
+                    >
+                        <img src={img} alt={`gallery-${index}`}
+                        />
                     </div>
                 ))}
+                <Lightbox
+                    styles={{
+                        root: {"--yarl__color_backdrop": "rgba(0, 0, 0, .8)"}, //스타일 속성 추가
+                    }}
+                    open={open}
+                    close={() => setOpen(false)}
+                    slides={images.map(img => ({src: img}))}
+                    index={index}
+                    on={{view: ({index: currentIndex}) => setIndex(currentIndex)}}
+                />
             </div>
         </div>
     )
