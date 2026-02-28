@@ -1,5 +1,6 @@
 import styles from './index.module.css';
 import Button from '@mui/material/Button';
+import confetti from 'canvas-confetti';
 
 const ATTENDANCE_TYPOGRAPHY = [
     '축하의 마음으로 참석해 주실',
@@ -9,10 +10,26 @@ const ATTENDANCE_TYPOGRAPHY = [
 ]
 
 const Attendance = () => {
+    const handleSpread = () => {
+        // 이모지 설정
+        const scalar = 6;
+        // @ts-ignore
+        const confettiAny = confetti as any;
+        const text1 = confettiAny.shapeFromText({text: '고마워', scalar: 20});
 
-    const handleOnclick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        console.log('e', e)
-    }
+        const flower = confettiAny.shapeFromText({text: '🌸', scalar});
+        const heart = confettiAny.shapeFromText({text: '❤️', scalar});
+        
+        confetti({
+            shapes: [text1, flower, heart],
+            particleCount: 30,
+            spread: 90,
+            origin: {y: 0.6},
+            scalar: 1,
+            colors: ['#FFC0CB', '#FFB6C1', '#BFC9FF'], // 벚꽃과 버튼 색상에 맞춘 톤
+            zIndex: 9999
+        });
+    };
 
 
     return (
@@ -31,7 +48,7 @@ const Attendance = () => {
                         padding: "18px 36px",
                         fontSize: "18px"
                     }}
-                    onClick={handleOnclick}>
+                    onClick={handleSpread}>
                     참석하기
                 </Button>
             </div>
